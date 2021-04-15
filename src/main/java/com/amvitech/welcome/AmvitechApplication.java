@@ -1,4 +1,5 @@
-package hello;
+
+package com.amvitech.welcome;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class Application {
+public class AmvitechApplication {
 
-  @RequestMapping("/Amvitech")
+  @RequestMapping("/amvitech")
   public String home() {
     return "Welcome to Amvi Tech Solutions Home page";
   }
   
-  @RequestMapping("/Amvitech/contacts")
+  @RequestMapping("/amvitech/contacts")
   public String contacts() {
     return "Please see the contacts here:";
   }
@@ -25,7 +26,7 @@ public class Application {
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    SpringApplication.run(AmvitechApplication.class, args);
   }
 
 }
