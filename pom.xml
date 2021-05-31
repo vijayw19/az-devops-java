@@ -5,7 +5,7 @@
 
     <groupId>org.amvitech</groupId>
     <artifactId>amvitech-backend</artifactId>
-    <version>0.1.2</version>
+    <version>1.1.5-SNAPSHOT</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -42,9 +42,70 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+			<plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.7.0.1746</version>
+           </plugin>
+		   <!-- <plugin> -->
+                <!-- <groupId>org.jacoco</groupId> -->
+                <!-- <artifactId>jacoco-maven-plugin</artifactId> -->
+                <!-- <version>0.8.8-SNAPSHOT</version> -->
+         <!-- </plugin> -->
+		 <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.7.7.201606060606</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+        <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+                <goal>report</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
         </plugins>
     </build>
-
+	<!-- <distributionManagement> -->
+    <!-- <repository> -->
+        <!-- <id>central</id> -->
+        <!-- <name>LAPTOP-AS3NL6AM-releases</name> -->
+        <!-- <url>http://localhost:8081/artifactory/bhabsaho</url> -->
+    <!-- </repository> -->
+    <!-- <snapshotRepository> -->
+        <!-- <id>snapshots</id> -->
+        <!-- <name>LAPTOP-AS3NL6AM-snapshots</name> -->
+        <!-- <url>http://localhost:8081/artifactory/bhabsaho</url> -->
+    <!-- </snapshotRepository> -->
+  <!-- </distributionManagement> -->
+	<distributionManagement>
+	<repository>
+          <id>central</id>
+          <name>bhabsaho2</name>
+          <url>http://localhost:8082/artifactory/bhabsaho/</url>
+     </repository>
+	 <snapshotRepository>
+          <id>snapshots</id>
+          <name>bhabsaho2</name>
+          <url>http://localhost:8082/artifactory/bhabsaho</url>
+    </snapshotRepository>
+	</distributionManagement>
+    
+    <!-- <snapshotRepository> -->
+      <!-- <uniqueVersion>true</uniqueVersion> -->
+      <!-- <id>propSnap</id> -->
+      <!-- <name>Propellors Snapshots</name> -->
+      <!-- <url>sftp://propellers.net/maven</url> -->
+      <!-- <layout>legacy</layout> -->
+    <!-- </snapshotRepository> --> 
+  
 </project>
 
 
